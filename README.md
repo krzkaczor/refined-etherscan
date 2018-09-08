@@ -6,6 +6,8 @@ Add additional features, aiding debugging to etherscan.io
 
 Before pushing run: `yarn test:fix` to fix everything autofixable.
 
+Use `yarn watch` to re-build bundle on changes.
+
 ### Building
 
 Run `yarn build` to rebuild plugin.
