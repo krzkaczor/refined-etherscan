@@ -1,0 +1,15 @@
+{
+  "name": "Refined EtherScan",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "minimum_chrome_version": "58",
+  "permissions": ["storage", "clipboardWrite", "contextMenus", "activeTab"],
+  "optional_permissions": ["http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["https://etherscan.com/*", "https://etherscan.io/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
