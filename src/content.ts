@@ -1,2 +1,14 @@
-//tslint:disable-next-line
-console.log("Hello world!");
+import { getPageType } from "./getPageType";
+
+function main() {
+  console.log("----- refined etherscan");
+  const pageType = getPageType(window.location.href);
+
+  if (pageType === "unknown") {
+    return;
+  }
+
+  console.log({ pageType });
+}
+
+main();
