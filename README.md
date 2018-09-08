@@ -2,6 +2,10 @@
 
 Add additional features, aiding debugging to etherscan.io
 
+## Features:
+
+* add % of gas used on tx overview panel
+
 ## Development
 
 Before pushing run: `yarn test:fix` to fix everything autofixable.
