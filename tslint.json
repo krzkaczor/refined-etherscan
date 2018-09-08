@@ -1,7 +1,7 @@
 {
   "extends": "typestrict",
   "rules": {
-    "no-console": true,
+    "no-console": false,
     "no-debugger": true,
     "typedef": [true, "call-signature"],
     "mocha-avoid-only": true,
