@@ -1,6 +1,6 @@
 # Refined Etherscan
 
-Add additional features, aiding debugging to etherscan.com
+Add additional features, aiding debugging to etherscan.io
 
 ## Development
 
