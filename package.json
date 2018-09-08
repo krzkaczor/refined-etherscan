@@ -7,21 +7,27 @@
     "start": "ts-node ./src/index.ts",
     "format": "prettier --list-different '**/*.{ts,json,md, gql}'",
     "format:fix": "prettier --write '**/*.{ts,json,md,gql}'",
-    "tslint":
-      "tslint -p ./tsconfig.json -e 'node_modules/**/*' -e '**/node_modules/**/*' '**/*.ts'",
-    "tslint:fix":
-      "tslint --fix --format stylish -p ./tsconfig.json -e 'node_modules/**/*' -e '**/node_modules/**/*' '**/*.ts'",
+    "tslint": "tslint -p ./tsconfig.json -e 'node_modules/**/*' -e '**/node_modules/**/*' '**/*.ts'",
+    "tslint:fix": "tslint --fix --format stylish -p ./tsconfig.json -e 'node_modules/**/*' -e '**/node_modules/**/*' '**/*.ts'",
     "tsc": "tsc --noEmit",
     "lint": "yarn format && yarn tslint && yarn tsc",
     "lint:fix": "yarn format:fix && yarn tslint:fix && yarn tsc",
-    "test": "yarn lint",
-    "test:fix": "yarn lint:fix",
-    "build":
-      "parcel build -d ./dist ./src/content.ts && cp ./src/manifest.json ./dist/manifest.json",
+    "test": "yarn lint && yarn test:mocha",
+    "test:fix": "yarn lint:fix && yarn test:mocha",
+    "test:mocha": "NODE_ENV=test mocha --require ts-node/register './**/*.spec.ts'",
+    "build": "parcel build -d ./dist ./src/content.ts && cp ./src/manifest.json ./dist/manifest.json",
     "watch": "parcel watch -d ./dist ./src/content.ts"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/jquery": "^3.3.1",
+    "@types/jsdom": "^11.0.6",
+    "@types/mocha": "^5.2.5",
     "@types/node": "^10.0.3",
+    "@types/parse5": "4.x",
+    "chai": "^4.1.2",
+    "jsdom": "^12.0.0",
+    "mocha": "^5.2.0",
     "parcel-bundler": "^1.9.7",
     "prettier": "^1.12.1",
     "ts-node": "^6.0.0",
@@ -29,5 +35,9 @@
     "tslint-language-service": "^0.9.9",
     "typescript": "^2.8.1",
     "typestrict": "^0.0.8"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "parse5": "4.x"
   }
 }

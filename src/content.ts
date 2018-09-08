@@ -1,14 +1,22 @@
 import { getPageType } from "./getPageType";
+import { setGasUsedPercentage } from "./views/txView";
+const jquery = require("jquery") as JQueryStatic;
 
 function main(): void {
   console.log("----- refined etherscan");
+
   const pageType = getPageType(window.location.href);
 
-  if (pageType === "unknown") {
-    return;
+  switch (pageType) {
+    case "tx":
+      refineTxView(jquery);
   }
-
-  console.log({ pageType });
 }
 
-main();
+function refineTxView($: JQueryStatic): void {
+  setGasUsedPercentage($);
+
+  console.log("Refining tx view done");
+}
+
+jquery.ready.then(main);
