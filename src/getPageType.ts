@@ -1,8 +1,9 @@
 export type TPageType = "unknown" | "tx";
 
+export const isTxPageRegex = /\/tx\/([0-9a-fx]*)$/;
+
 export function getPageType(url: string): TPageType {
-  const isTxPage = /\/tx\//;
-  if (url.match(isTxPage)) {
+  if (url.match(isTxPageRegex)) {
     return "tx";
   }
 
